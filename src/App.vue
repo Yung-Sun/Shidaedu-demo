@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-aside style="width: 150px" v-if="false">Aside</el-aside>
-      <el-main style="padding: 0">
+      <el-main style="padding: 0;">
         <Home/>
       </el-main>
     </el-container>
@@ -29,6 +29,5 @@ export default {
     color: #333;
   }
   .el-main{
-
   }
 </style>

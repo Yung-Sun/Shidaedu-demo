@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="banner">
-      <el-carousel height="60vw"
+      <el-carousel height="55vw"
                    :autoplay="true"
                    arrow="never"
                    trigger="click"
@@ -19,60 +19,41 @@
       </el-carousel>
     </div>
     <main class="classListWrapper">
-      <div class="systemClass">
-        <div class="title">
-          <span class="classType">系统班</span>
-          <a class="more" href="#">更多</a>
-        </div>
-        <div >
-          <ul class="classList">
-            <li >
-              <div class="image"></div>
-              <div class="className">VIP特训班</div>
-              <div class="classPrice">￥8800.00</div>
-              <div class="classSellCount">59554人已购买</div>
-            </li>
-            <li >
-              <div class="image"></div>
-              <div class="className">新锐精英班</div>
-              <div class="classPrice">￥6800.00</div>
-              <div class="classSellCount">59158人已购买</div>
-            </li>
-            <li >
-              <div class="image"></div>
-              <div class="className">高薪就业取证班</div>
-              <div class="classPrice">￥9980.00</div>
-              <div class="classSellCount">36625人已购买</div>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Class v-for="(item,index) in classType" :key="index" :classType="item"/>
     </main>
   </div>
 </template>
 
 <script lang="ts">
+import Class from './Class.vue'
 export default {
+  components:{Class},
   data(){
     return {
-
+      classType: ['系统班','专题班','上进班']
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.el-carousel__item {
-  background: #333;
+$blue: #0080ff;
+
+// 文本溢出显示省略号
+%text-overflow {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.el-carousel__item{
+  background: #ddd;
   img{
     width: 100vw;
   }
 }
 .classListWrapper{
-  .systemClass{
-
-  }
+  margin: 15px 0;
+  padding: 5px 16px;
 }
-
-
 </style>
