@@ -1,41 +1,15 @@
 <template>
     <div>
-
       <div class="systemClass">
         <div class="title">
-          <span class="classType">{{classType}}</span>
+          <span class="classType">
+            <slot name="type"/>
+          </span>
           <a class="more" href="#">更多</a>
         </div>
         <ul class="classList">
           <li >
-            <div class="classImage">
-              <img src="../img/class1.jpg" alt="VIP特训班">
-            </div>
-            <p class="className">VIP特训班</p>
-            <div class="classInfo">
-              <span class="classPrice">￥8800.00</span>
-              <span class="classSellCount">59554人已购买</span>
-            </div>
-          </li>
-          <li >
-            <div class="classImage">
-              <img src="../img/class2.jpg" alt="VIP特训班">
-            </div>
-            <p class="className">VIP特训班</p>
-            <div class="classInfo">
-              <span class="classPrice">￥8800.00</span>
-              <span class="classSellCount">59554人已购买</span>
-            </div>
-          </li>
-          <li >
-            <div class="classImage">
-              <img src="../img/class3.png" alt="VIP特训班">
-            </div>
-            <p class="className">VIP特训班</p>
-            <div class="classInfo">
-              <span class="classPrice">￥8800.00</span>
-              <span class="classSellCount">59554人已购买</span>
-            </div>
+            <slot name="classDetail"/>
           </li>
         </ul>
       </div>
@@ -44,9 +18,16 @@
 
 <script lang="ts">
 
+// import ClassDetail from './ClassDetail.vue';
 
 export default{
-props:['classType']
+  props:['classInfo'],
+  // components:{ClassDetail},
+  data(){
+    return{
+
+    }
+  }
 }
 </script>
 
