@@ -1,5 +1,18 @@
 <template>
-  <div>
+  <div class="homeWrapper">
+    <div class="headerBar">
+      <div class="menu" @click="toggle">
+        <i class="el-icon-s-fold"></i>
+      </div>
+      <div class="rightButton">
+        <div class="message">
+          <i class="el-icon-chat-line-round"></i>
+        </div>
+        <div class="box">
+          <i class="el-icon-s-grid"></i>
+        </div>
+      </div>
+    </div>
     <div class="banner">
       <el-carousel height="55vw"
                    :autoplay="true"
@@ -30,6 +43,7 @@
       </Class>
     </main>
     <div class="noDataTips">暂无数据</div>
+
   </div>
 </template>
 
@@ -57,12 +71,44 @@ export default {
         }
       ],
     }
+  },
+  methods: {
+    toggle(){
+      this.$emit('update:menuVisible',this.num ++ );
+    }
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
+.homeWrapper{
+  position: relative;
+}
+.headerBar{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 0 10px;
+  z-index: 3;
+  top: 5%;
+  .rightButton{
+    display: flex;
+  }
+  .menu,.message,.box{
+    font-size: 25px;
+    color: #ffffff;
+    width: 42px;
+    height: 42px;
+    background: #33333333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+  }
+}
+
 .el-carousel__item{
   img{
     width: 100vw;
@@ -72,6 +118,7 @@ export default {
   margin: 15px 0;
   padding: 5px 16px;
 }
+
 .noDataTips{
   text-align: center;
   color: #999;
