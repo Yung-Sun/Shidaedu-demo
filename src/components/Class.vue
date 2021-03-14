@@ -1,5 +1,6 @@
 <template>
     <div>
+      {{courseName}}
       <div class="systemClass">
         <div class="title">
           <span class="classType">
@@ -8,26 +9,15 @@
           <a class="more" href="#">更多</a>
         </div>
         <ul class="classList">
-          <li >
-            <slot name="classDetail"/>
-          </li>
+          <slot name="course"/>
         </ul>
       </div>
     </div>
 </template>
 
 <script lang="ts">
-
-// import ClassDetail from './ClassDetail.vue';
-
 export default{
-  props:['classInfo'],
-  // components:{ClassDetail},
-  data(){
-    return{
-
-    }
-  }
+  props:['courseName']
 }
 </script>
 
@@ -71,7 +61,6 @@ $blue: #0080ff;
     flex-wrap: wrap;
     li{
       padding-bottom: 15px;
-      //border: 1px solid #b3c0d1;
       width: 44vw;
       .classImage{
         border-radius: 6px;
@@ -105,10 +94,7 @@ $blue: #0080ff;
           @extend %text-overflow
         }
       }
-
     }
-
-
   }
 }
 </style>

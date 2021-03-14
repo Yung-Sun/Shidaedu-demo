@@ -1,8 +1,7 @@
 <template>
-    <div class="wrapper">
-      {{course}}
+    <li class="wrapper">
       <div class="classImage">
-        <img src="../img/class1.jpg" alt="VIP特训班">
+        <img :src="require('../img/'+imgLink)" alt="课程图片">
       </div>
       <p class="className">
         <slot name="name"></slot>
@@ -15,18 +14,16 @@
           <slot name="count"></slot>人已购买
         </span>
       </div>
-    </div>
+    </li>
 </template>
 
 <script lang="ts">
-
 export default{
-props:['course']
+props:['imgLink']
 }
 </script>
 
 <style lang="scss" scoped>
-$blue: #0080ff;
 %text-overflow {
   overflow: hidden;
   text-overflow:ellipsis;
@@ -34,7 +31,6 @@ $blue: #0080ff;
 }
 .wrapper{
   padding-bottom: 15px;
-  //border: 1px solid #b3c0d1;
   width: 44vw;
   .classImage{
     border-radius: 6px;
@@ -68,6 +64,5 @@ $blue: #0080ff;
       @extend %text-overflow
     }
   }
-
 }
 </style>
