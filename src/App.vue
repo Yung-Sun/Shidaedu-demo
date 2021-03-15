@@ -7,11 +7,11 @@
             <img data-v-d7b1c790="" alt="" width="45%" src="https://cdn.shidastudy.com/static/images/7e/19/d0/9a/c50a3745ea9c4a97af97cb9140d8590c.png">
           </div>
           <ul class="asideMenu">
-            <li><div>首页</div></li>
-            <li><div>课程商店</div></li>
-            <li><div>学习中心</div></li>
-            <li><div>个人中心</div></li>
-            <li><div>企业荣誉</div></li>
+            <li><div><a href="#">首页</a></div></li>
+            <li><div><a href="#">课程商店</a></div></li>
+            <li><div><a href="#">学习中心</a></div></li>
+            <li><div><a href="#">个人中心</a></div></li>
+            <li><div><a href="#">企业荣誉</a></div></li>
           </ul>
           <div class="asideFooter">
             <p>咨询&投诉热线：400-811-9995</p>
@@ -94,7 +94,10 @@ export default {
           width: 70%;
           display: inline-block;
           border-bottom: 1px solid #e5e5e5;
-
+          a{
+            text-decoration:none;
+            color:#000;
+          }
         }
       }
     }
@@ -103,7 +106,10 @@ export default {
       color: #bbb;
       text-align: center;
       position: absolute;
-      bottom: 25px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
       p{
         padding: 2px 0;
       }
