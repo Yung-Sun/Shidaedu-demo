@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="banner">
-      <el-carousel height="55vw"
+      <el-carousel height="60vw"
                    :autoplay="true"
                    arrow="never"
                    trigger="click"
@@ -28,6 +28,7 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <div class="xxx"></div>
     <main class="classListWrapper">
       <Class :classInfo="classInfo" v-for="(item,index) in classInfo" :key="index" >
         <template v-slot:type>
@@ -114,6 +115,12 @@ export default {
     width: 100vw;
   }
 }
+.xxx{
+  height: 8px;
+  background: #eee;
+}
+
+
 .classListWrapper{
   margin: 15px 0;
   padding: 5px 16px;

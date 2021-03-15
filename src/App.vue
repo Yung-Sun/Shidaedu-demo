@@ -2,14 +2,22 @@
   <div>
     <el-container>
       <transition name="slide">
-        <el-aside style="width: 50%" v-if="menuVisible">
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+        <el-aside style="width: 60%" v-if="menuVisible">
+          <div class="asideLogo">
+            <img data-v-d7b1c790="" alt="" width="45%" src="https://cdn.shidastudy.com/static/images/7e/19/d0/9a/c50a3745ea9c4a97af97cb9140d8590c.png">
+          </div>
+          <ul class="asideMenu">
+            <li><div>首页</div></li>
+            <li><div>课程商店</div></li>
+            <li><div>学习中心</div></li>
+            <li><div>个人中心</div></li>
+            <li><div>企业荣誉</div></li>
           </ul>
+          <div class="asideFooter">
+            <p>咨询&投诉热线：400-811-9995</p>
+            <p>2018-2019 武汉师学思大教育科技有限公司</p>
+            <p> ICP备案证书：<span style="color: #ba1111">鄂ICP备18024543号-1</span></p>
+          </div>
         </el-aside>
       </transition>
       <transition name="fade">
@@ -66,9 +74,40 @@ export default {
   .el-aside{
     position: absolute;
     height: 100vh;
-    background: #b3c0d1;
+    background: white;
     color: #333;
     z-index: 5;
+    .asideLogo{
+      text-align: center;
+      padding-top: 50px;
+    }
+    .asideMenu{
+      padding: 30px 0;
+      //border: 1px solid;
+      li:first-child{
+        background: #e6e6e6;
+      }
+      li {
+        text-align: center;
+        div{
+          padding: 13px;
+          width: 70%;
+          display: inline-block;
+          border-bottom: 1px solid #e5e5e5;
+
+        }
+      }
+    }
+    .asideFooter{
+      font-size: 12px;
+      color: #bbb;
+      text-align: center;
+      position: absolute;
+      bottom: 25px;
+      p{
+        padding: 2px 0;
+      }
+    }
   }
   .closeMenuButton{
     position: absolute;
